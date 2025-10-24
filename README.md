@@ -36,7 +36,7 @@
   - CAINC1: Personal Income
   - CAINC4: Personal Income & Total Employment
   - CAEMP25N: Employment by Industry
-- **Years**: 2016-2023
+- **Years**: 2016-2024
 - **Format**: CSV
 - **Notes**: Data released with ~1 year lag
 
@@ -44,6 +44,6 @@
 - **Source**: USDA Economic Research Service
 - **URL**: https://www.ers.usda.gov/data-products/rural-urban-continuum-codes/
 - **Download Date**: 10/1/25
-- **File**: ruralurbancodes2013.xlsx
+- **File**: Ruralurbancontinuumcodes2023.csv
 - **Format**: Excel
-- **Notes**: Codes updated infrequently; 2013 is most recent
+- **Notes**: Codes updated infrequently; 2023 is most recent
