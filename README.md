@@ -1,11 +1,11 @@
 # Raw Data Sources
 
-## Last Updated: [DATE]
+## Last Updated: 10/1/25
 
 ## Florida Division of Elections
 - **Source**: Florida Department of State
 - **URL**: https://dos.myflorida.com/elections/
-- **Download Date**: [DATE]
+- **Download Date**: 10/1/25
 - **Files**:
   - Voter registration by county: 2016-2024
   - General election results: 2016, 2018, 2020, 2022, 2024
@@ -16,7 +16,7 @@
 ## U.S. Census Bureau - American Community Survey
 - **Source**: U.S. Census Bureau
 - **URL**: https://data.census.gov/
-- **Download Date**: [DATE]
+- **Download Date**: 10/1/25
 - **Dataset**: ACS 5-Year Estimates (2016-2020)
 - **Geography**: Florida Counties (67 counties)
 - **Tables**:
@@ -31,7 +31,7 @@
 ## Bureau of Economic Analysis
 - **Source**: U.S. Department of Commerce, BEA
 - **URL**: https://www.bea.gov/data/economic-accounts/regional
-- **Download Date**: [DATE]
+- **Download Date**: 10/1/25
 - **Tables**:
   - CAINC1: Personal Income
   - CAINC4: Personal Income & Total Employment
@@ -43,7 +43,7 @@
 ## USDA Rural-Urban Continuum Codes
 - **Source**: USDA Economic Research Service
 - **URL**: https://www.ers.usda.gov/data-products/rural-urban-continuum-codes/
-- **Download Date**: [DATE]
+- **Download Date**: 10/1/25
 - **File**: ruralurbancodes2013.xlsx
 - **Format**: Excel
 - **Notes**: Codes updated infrequently; 2013 is most recent
