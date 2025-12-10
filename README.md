@@ -47,16 +47,11 @@ florida_voter_project/
 │       └── Master_Dataset_Temporal_Matched.csv  # FINAL OUTPUT
 ├── scripts/
 │   ├── combine_election_years.py     # Step 1: Combine election files
-│   ├── 02_clean_standardize.py       # Step 2: Clean and add FIPS codes
-│   ├── 03_integrate_data.py          # Step 3: Initial Census/BEA integration
-│   ├── 04_add_usda_rural_urban.py    # Step 4: Add geographic classification
-│   └── 05_temporal_matching_bea.py   # Step 5: Year-specific BEA matching
-├── documentation/
-│   ├── data_dictionary.csv           # Complete variable documentation
-│   ├── quality_report.md             # Quality assessment results
-│   └── proposal.md                   # Original project proposal
+│   ├── clean_standardize.py          # Step 2: Clean and add FIPS codes
+│   ├── data_integration.py           # Step 3: Initial Census/BEA integration
+│   ├── add_usda_codes.py             # Step 4: Add geographic classification
+│   └── temporal_matching.py          # Step 5: Year specific BEA matching
 ├── requirements.txt                  # Python dependencies
-├── LICENSE                           # MIT License
 └── README.md                         # This file
 ```
 
@@ -75,13 +70,13 @@ florida_voter_project/
 ### U.S. Census Bureau - American Community Survey
 - **Source:** U.S. Census Bureau
 - **URL:** https://data.census.gov/
-- **Dataset:** ACS 5-Year Estimates (2016-2020), released December 2021
+- **Dataset:** ACS 5-Year Estimates (2016-2020)
 - **Tables Used:**
   - B19013: Median Household Income
   - B15003: Educational Attainment
   - B01003: Total Population
 - **Format:** CSV via data.census.gov interface
-- **Notes:** 5-year rolling estimates provide reliable county-level data
+- **Notes:** 5 year rolling estimates provide reliable county-level data
 
 ### Bureau of Economic Analysis
 - **Source:** U.S. Department of Commerce, BEA
@@ -90,7 +85,7 @@ florida_voter_project/
   - CAINC1: Personal Income (per capita)
   - CAGDP2: GDP by County
 - **Temporal Coverage:** Annual data 2016-2023
-- **Temporal Matching:** Year-specific matching to election years (2016→2016, 2018→2018, 2020→2020, 2022→2022, 2024→2023)
+- **Temporal Matching:** Year-specific matching to election years (2016→2016, 2018→2018, 2020→2020, 2022→2022, 2024→2024)
 - **Release:** September 2024
 
 ### USDA Rural-Urban Continuum Codes
@@ -130,16 +125,16 @@ Run scripts in order from the `scripts/` directory:
 python combine_election_years.py
 
 # Step 2: Clean data and add FIPS codes
-python 02_clean_standardize.py
+python clean_standardize.py
 
 # Step 3: Initial Census and BEA integration
-python 03_integrate_data.py
+python data_integration.py
 
 # Step 4: Add USDA Rural-Urban classification
-python 04_add_usda_rural_urban.py
+python add_usda_codes.py
 
-# Step 5: Implement year-specific BEA temporal matching
-python 05_temporal_matching_bea.py
+# Step 5: Implement year specific BEA temporal matching
+python temporal_matching.py
 ```
 
 Final output: `data/processed/Master_Dataset_Temporal_Matched.csv`
@@ -174,7 +169,7 @@ Final output: `data/processed/Master_Dataset_Temporal_Matched.csv`
 ### Completeness
 - All 67 Florida counties present in each of 5 election years (335 total observations)
 - Zero missing values across all 16 variables
-- 100% match rate for FIPS-based joins
+- 100% match rate for FIPS based joins
 
 ### Consistency
 - Aggregated county totals validated against state-level published figures
@@ -187,7 +182,7 @@ Final output: `data/processed/Master_Dataset_Temporal_Matched.csv`
 
 ### Range Validation
 - Turnout percentages: 40.5% to 94.1% (all within expected bounds)
-- No duplicate FIPS-year combinations
+- No duplicate FIPS year combinations
 
 ---
 
@@ -210,22 +205,6 @@ Final output: `data/processed/Master_Dataset_Temporal_Matched.csv`
 2. **2024 BEA Data:** Uses 2023 estimates (most recent available) for 2024 election
 
 3. **Employment Variable:** CAINC4 employment data excluded due to parsing complexity; per capita income and GDP provide robust economic measures
-
----
-
-## License
-
-MIT License - See LICENSE file for details.
-
----
-
-## Citation
-
-```
-Fletcher, D. (2025). Florida Voter Turnout Analysis: A Data Curation Project. 
-CS 598 - Foundations of Data Curation. 
-https://github.com/Dfletchh/CS-598-Foundations-of-Data-Curation
-```
 
 ---
 
