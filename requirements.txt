@@ -1,0 +1,6 @@
+# Florida Voter Turnout Analysis
+# Python dependencies for data curation project
+# CS 598 - Foundations of Data Curation
+
+pandas>=2.0.0
+numpy>=1.24.0
